@@ -28,7 +28,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", 1688168923))
 ADMIN_IDS = [int(x) for x in os.environ.get("ADMINS", "1688168923").split(",")]
 
 # Force Subscribe Settings
-FORCE_SUB = -1001813593588
+FORCE_SUB_CHANNELS = [int(x) for x in os.environ.get("FORCE_SUB_CHANNELS", "-1001813593588").split(",")]
 FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel to use this bot!")
 
 UPDATES = os.environ.get("UPDATES", "")
@@ -47,7 +47,6 @@ START_PIC = PICS
 FORCE_PIC = PICS
 
 BOT_COMMANDS = "start:🎯 Start the bot, help:❓ How to use the bot, status:📊 Bot statistics, reset:🔄 Total reset (only owner)"
-
 
 
 #========================================================================
