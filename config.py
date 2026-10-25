@@ -25,11 +25,11 @@ COLLECTION_NAME = os.environ.get("COLLECTION_NAME", "files")
 
 # Optional Settings
 OWNER_ID = int(os.environ.get("OWNER_ID", 1688168923))
-ADMIN_IDS = [int(x) for x in os.environ.get("ADMINS", "1688168923").split(",")]
+ADMINS = [1688168923]
 
 # Force Subscribe Settings
-FORCE_SUB_CHANNELS = [int(x) for x in os.environ.get("FORCE_SUB_CHANNELS", "-1001813593588").split(",")]
-FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel to use this bot!")
+FORCE_SUB_CHANNELS = [-1001813593588]
+FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel 'T. Nittu - MOVIES 4K' to use this bot! 🚨")
 
 UPDATES = os.environ.get("UPDATES", "")
 ADMINS = ADMIN_IDS + [OWNER_ID]
@@ -46,8 +46,7 @@ def get_random_pic():
 START_PIC = PICS
 FORCE_PIC = PICS
 
-BOT_COMMANDS = "start:🎯 Start the bot, help:❓ How to use the bot, status:📊 Bot statistics, reset:🔄 Total reset (only owner)"
-
+BOT_COMMANDS = ["start", "help", "status", "reset"]
 
 #========================================================================
 # Don't Remove Credit Tg - @TDBotDev
