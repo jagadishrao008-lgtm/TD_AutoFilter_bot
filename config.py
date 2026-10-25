@@ -34,6 +34,8 @@ FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel 
 UPDATES = os.environ.get("UPDATES", "")
 ADMINS = [1688168923]
 ADMIN_IDS = ADMINS
+HELP_TEXT = os.environ.get("HELP_TEXT", "This is help text.")
+ABOUT_TEXT = os.environ.get("ABOUT_TEXT", "This is about text.")
 
 # Auto-Delete Settings
 AUTO_DELETE_TIME = os.environ.get("AUTO_DELETE_TIME", "30")
