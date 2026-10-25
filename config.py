@@ -7,73 +7,51 @@ import os
 import random
 from dotenv import load_dotenv
 
-# config.py
 load_dotenv()
 
-API_ID = int(os.environ.get("API_ID", "35992347"))
+API_ID = int(os.environ.get("API_ID", 35992347))
 API_HASH = os.environ.get("API_HASH", "a3c7960f6fb6a8b4cd3cdd9f4b97371f")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8791951760:AAFzdpbwlnLUNXuqcABKGXya1TcKd8NSh6I")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8791951760:AAFzdpbwlnLUNXuqcAeKGXya1TcKd8NSh6I")
 
 # Search Settings
-DB_CHANNEL_ID = int(os.environ.get("DB_CHANNEL_ID", "-1004352011721"))
-START_TEXT = os.environ.get("START_TEXT", "🚀 Welcome to CineVerse Ultra\n\n🎬 Movies • Series • Anime • Episodes — All in One Place\n⚡ Lightning Fast Search with Smart Auto Filters\n🧠 Auto Detect Language • Quality • Seasons\n\n📂 Continue Watching • 🔥 Trending • ▶️ One Click Play\n\n🔍 Just send any name (movie / series / file) to start exploring")
+DB_CHANNEL_ID = int(os.environ.get("DB_CHANNEL_ID", -1001813593588))
+START_TEXT = os.environ.get("START_TEXT", "👋 Welcome to NittuMovies4K Auto Filter Bot!")
 MAX_RESULTS = int(os.environ.get("MAX_RESULTS", 10))
 
-# Help and About Texts
-HELP_TEXT = os.environ.get("HELP_TEXT", "📖 **Help Menu**\n\n1. Send any movie or series name to search.\n2. Use the quality and language filters to narrow down results.\n3. Click on the file name to receive it instantly.")
-ABOUT_TEXT = os.environ.get("ABOUT_TEXT", "❄️ **About This Bot**\n\nThis is a high-speed file storage and search bot for CineVerse users. It indexes thousands of files and provides them with minimal delay.\n\nDeveloper: [ @TDBotDev ]")
-
 # Database Settings
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://jagadishrao008_db_user:OwRNyuQcYWkyH3VB@cluster0.atscyh5.mongodb.net/myMovieBot?retryWrites=true&w=majority")
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "autofilebot")
-COLLECTION_NAME = "files"
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://jagadishrao008_db_user:0wRNyuQcYWkyH3VB@cluster0.ngv7r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "autofilterbot")
+COLLECTION_NAME = os.environ.get("COLLECTION_NAME", "files")
 
-# Optional settings
-OWNER_ID = int(os.environ.get("OWNER_ID", "7143924765"))
-ADMINS = [int(x) for x in os.environ.get("ADMINS", "6950261247").split(",") if x]  # multiple admins allowed ("8475661555","8475661555")
+# Optional Settings
+OWNER_ID = int(os.environ.get("OWNER_ID", 1688168923))
+ADMINS = [int(x) for x in os.environ.get("ADMINS", "1688168923").split(",")]
 
 # Force Subscribe Settings
-# Updated to multiple channels as per user request
-FORCE_SUB_CHANNELS = [int(x) for x in os.environ.get("FORCE_SUB_CHANNELS", "-1003726486971").split(",") if x] # multiple force sub allowed ("-1003511440278","-1003511440278")
-ADMIN_IDS = ADMINS + [OWNER_ID]
-FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "📥 **Please join our channels to use this bot!**\n\nDue to high server load, only subscribers can search files.")
+FORCE_SUB_CHANNELS = [int(x) for x in os.environ.get("FORCE_SUB_CHANNELS", "-1001813593588").split(",")]
+FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel to use this bot!")
 
-# Updates Link
-UPDATES = os.environ.get("UPDATES", "https://t.me/kdramatalkies")
+UPDATES = os.environ.get("UPDATES", "")
 
 # Auto-Delete Settings
-AUTO_DELETE_TIME = os.environ.get("AUTO_DELETE_TIME", "30s") # Format: 30s, 1m, 1h, 1d or '0' to disable
-DELETE_MESSAGE_TEXT = "⚠️ <b><u>IMPORTANT:</u></b>\n\n<i>ᴀʟʟ ᴍᴇssᴀɢᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ {time}. ᴘʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ᴛʜᴇᴍ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs.</i>"
+AUTO_DELETE_TIME = os.environ.get("AUTO_DELETE_TIME", "30")
+DELETE_MESSAGE_TEXT = os.environ.get("DELETE_MESSAGE_TEXT", "⚠️ All messages will be deleted after 30 seconds!")
 
-# UI Images
-PICS = [
-    "https://ibb.co/39zW3dNh",
-    "https://ibb.co/v4FX9rMN",
-    "https://ibb.co/8L9rDmB4",
-    "https://ibb.co/kVTGm4Rn",
-    "https://ibb.co/Hff6FyNH",
-    "https://ibb.co/DDRzKfv5",
-    "https://ibb.co/Y7ds8xGg",
-    "https://ibb.co/0jY0HHND",
-    "https://ibb.co/Z1kCz73X"
-]
+PICS = ["https://telegra.ph"]
 
 def get_random_pic():
     return random.choice(PICS)
 
-# Initial images
-START_PIC = PICS[0]
-FORCE_PIC = PICS[1]
+START_PIC = PICS
+FORCE_PIC = PICS
 
-# Bot Commands
-BOT_COMMANDS = [
-    ("start", "🚀 Start the bot"),
-    ("help", "🆘 How to use the bot"),
-    ("delete_file", "🗑️ Delete your DB files (admin)"),
-    ("broadcast", "⚡ Broadcast message (admin)"),
-    ("status", "👀 Bot statistics (admin)"),
-    ("reset", "❌ Total reset (only owner)")
-]
+BOT_COMMANDS = {
+    "start": "🎯 Start the bot",
+    "help": "❓ How to use the bot",
+    "status": "📊 Bot statistics",
+    "reset": "🔄 Total reset (only owner)"
+}
+
 
 #========================================================================
 # Don't Remove Credit Tg - @TDBotDev
