@@ -47,12 +47,8 @@ def get_random_pic():
 START_PIC = PICS
 FORCE_PIC = PICS
 
-BOT_COMMANDS = {
-    "start": "🚀 Start the bot",
-    "help": "❓ How to use the bot",
-    "status": "📊 Check bot status",
-    "reset": "🔄 Reset the bot"
-}
+BOT_COMMANDS = ["start", "help", "status", "reset"]
+
 
 #========================================================================
 # Don't Remove Credit Tg - @TDBotDev
