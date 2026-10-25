@@ -10,12 +10,12 @@ from dotenv import load_dotenv
 # config.py
 load_dotenv()
 
-API_ID = int(os.environ.get("API_ID", "35992347")
+API_ID = int(os.environ.get("API_ID", "35992347"))
 API_HASH = os.environ.get("API_HASH", "a3c7960f6fb6a8b4cd3cdd9f4b97371f")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "8791951760:AAFzdpbwlnLUNXuqcABKGxya1TcKd8NSh6I")
 
 # Search Settings
-DB_CHANNEL_ID = int(os.environ.get("DB_CHANNEL_ID", "-1004352011721")
+DB_CHANNEL_ID = int(os.environ.get("DB_CHANNEL_ID", "-1004352011721"))
 START_TEXT = os.environ.get("START_TEXT", "🚀 Welcome to CineVerse Ultra\n\n🎬 Movies • Series • Anime • Episodes — All in One Place\n⚡ Lightning Fast Search with Smart Auto Filters\n🧠 Auto Detect Language • Quality • Seasons\n\n📂 Continue Watching • 🔥 Trending • ▶️ One Click Play\n\n🔍 Just send any name (movie / series / file) to start exploring")
 MAX_RESULTS = int(os.environ.get("MAX_RESULTS", 10)
 
@@ -29,7 +29,7 @@ DATABASE_NAME = os.environ.get("DATABASE_NAME", "autofilebot")
 COLLECTION_NAME = "files"
 
 # Optional settings
-OWNER_ID = int(os.environ.get("OWNER_ID", "7143924765")
+OWNER_ID = int(os.environ.get("OWNER_ID", "7143924765"))
 ADMINS = [int(x) for x in os.environ.get("ADMINS", "6950261247").split(",") if x]  # multiple admins allowed ("8475661555","8475661555")
 
 # Force Subscribe Settings
