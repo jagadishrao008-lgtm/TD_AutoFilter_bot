@@ -50,7 +50,6 @@ FORCE_PIC = PICS
 BOT_COMMANDS = [("start", "Start the bot"), ("help", "Get help"), ("status", "Check status"), ("reset", "Reset bot")]
 
 
-
 #========================================================================
 # Don't Remove Credit Tg - @TDBotDev
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@TDBotDev
