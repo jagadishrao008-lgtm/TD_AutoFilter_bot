@@ -32,7 +32,7 @@ FORCE_SUB_CHANNELS = [-1001813593588]
 FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel 'T. Nittu - MOVIES 4K' to use this bot! 🚨")
 
 UPDATES = os.environ.get("UPDATES", "")
-ADMINS = ADMIN_IDS + [OWNER_ID]
+ADMINS = [1688168923]
 
 # Auto-Delete Settings
 AUTO_DELETE_TIME = os.environ.get("AUTO_DELETE_TIME", "30")
