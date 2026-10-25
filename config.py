@@ -25,13 +25,14 @@ COLLECTION_NAME = os.environ.get("COLLECTION_NAME", "files")
 
 # Optional Settings
 OWNER_ID = int(os.environ.get("OWNER_ID", 1688168923))
-ADMINS = [int(x) for x in os.environ.get("ADMINS", "1688168923").split(",")]
+ADMIN_IDS = [int(x) for x in os.environ.get("ADMINS", "1688168923").split(",")]
 
 # Force Subscribe Settings
 FORCE_SUB_CHANNELS = [int(x) for x in os.environ.get("FORCE_SUB_CHANNELS", "-1001813593588").split(",")]
 FORCE_SUB_TEXT = os.environ.get("FORCE_SUB_TEXT", "🚨 Please join our channel to use this bot!")
 
 UPDATES = os.environ.get("UPDATES", "")
+ADMINS = ADMIN_IDS + [OWNER_ID]
 
 # Auto-Delete Settings
 AUTO_DELETE_TIME = os.environ.get("AUTO_DELETE_TIME", "30")
