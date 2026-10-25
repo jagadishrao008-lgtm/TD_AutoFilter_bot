@@ -47,7 +47,8 @@ def get_random_pic():
 START_PIC = PICS
 FORCE_PIC = PICS
 
-BOT_COMMANDS = ["start", "help", "status", "reset"]
+BOT_COMMANDS = [("start", "Start the bot"), ("help", "Get help"), ("status", "Check status"), ("reset", "Reset bot")]
+
 
 
 #========================================================================
