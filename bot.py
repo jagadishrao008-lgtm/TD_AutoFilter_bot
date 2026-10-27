@@ -92,7 +92,7 @@ async def send_all_callback_handler(client, cb):
     if delay > 0:
         readable_time = AUTO_DELETE_TIME.replace("s", " Seconds").replace("m", " Minutes").replace("h", " Hours").replace("d", " Days")
         text = style_text(DELETE_MESSAGE_TEXT.format(time=readable_time))
-        btn = InlineKeyboardMarkup([[InlineKeyboardButton(style_btn("📟 UPDATE CHANNEL"), url=UPDATES)]])
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton(style_btn("📟 UPDATE CHANNEL"), url=UPDATES)]]) if UPDATES else None
         info_msg = await client.send_message(cb.message.chat.id, text, reply_markup=btn)
         sent_msg_ids.append(info_msg.id)
         asyncio.create_task(auto_delete_messages(client, cb.message.chat.id, sent_msg_ids, delay))
@@ -133,7 +133,7 @@ async def file_callback_handler(client, cb):
             sent_msg_ids = [cb.message.id, m.id]
             readable_time = AUTO_DELETE_TIME.replace("s", " Seconds").replace("m", " Minutes").replace("h", " Hours").replace("d", " Days")
             text = style_text(DELETE_MESSAGE_TEXT.format(time=readable_time))
-            btn = InlineKeyboardMarkup([[InlineKeyboardButton(style_btn("📟 UPDATE CHANNEL"), url=UPDATES)]])
+            btn = InlineKeyboardMarkup([[InlineKeyboardButton(style_btn("📟 UPDATE CHANNEL"), url=UPDATES)]]) if UPDATES else None
             info_msg = await client.send_message(cb.message.chat.id, text, reply_markup=btn)
             sent_msg_ids.append(info_msg.id)
             asyncio.create_task(auto_delete_messages(client, cb.message.chat.id, sent_msg_ids, delay))
@@ -160,11 +160,13 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"ERROR: Failed to set bot commands: {e}")
 
-        try:
-            await bot.send_message(OWNER_ID, f"**bot started successfully with ForceSub & Web Service ✅**\n\n**Configured Channel ID:** `{DB_CHANNEL_ID}`")
-        except Exception:
-            pass
+        if OWNER_ID:
+            try:
+                await bot.send_message(OWNER_ID, f"**Nittu Movies bot started successfully! ✅**\n\n**Configured Channel ID:** `{DB_CHANNEL_ID}`")
+            except Exception:
+                pass
         await idle()
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
+    
