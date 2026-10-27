@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # నీ సొంత టెలిగ్రామ్ API వివరాలు (డైరెక్ట్ సెట్ చేయబడ్డాయి)
-API_ID = 35992347
+API_ID = "35992347"
 API_HASH = "a3c7960f6fb6a8b4cd3cdd9f4b93737f"
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "8791951760:AAHCTPRz1lfzZILE0Uhye7rHQphxKnZ1urQ")
 
