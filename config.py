@@ -60,3 +60,4 @@ BOT_COMMANDS = [
     ("status", "👀 Statistics (admin)")
 ]
 
+
